@@ -41,3 +41,4 @@ def datetime_from_date_and_seconds(date_str,seconds):
 if __name__ == "__main__":
     # execute only if run as a script
     print('nothing executed on calling VBZ')
+# evil troll edit
