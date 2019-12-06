@@ -2,7 +2,7 @@
 """
 Created on Fri Dec  6 13:25:25 2019
 
-@author: Dr-Nuke & 
+@author: Dr-Nuke &
 
 Explorative exploration of the VBZ 2018 data
 """
@@ -28,13 +28,16 @@ import datetime as dt
 # halt=pd.read_csv(path_halt)
 
 
-def Second_to_timeStr(seconds):
+def datetime_from_date_and_seconds(date_str,seconds):
+    """Transforms a date in stringform and seconds since midnight into a datetime
+    date_str: string of the form 'dd.mm.yy'
+    seconds: int for seconds since midnight (can be negative or larger than seconds in day)
     """
-    converts the seconds-from-midnight (VBZ-format) into a readable string of time hh:mm:ss
-    """
-    return '00:00:00'
+    date_lst = [int(d) for d in date_str.split('.')[::-1]];
+    date = datetime.datetime(date_lst[0]+2000,date_lst[1],date_lst[2]);
+    return date + datetime.timedelta(seconds = seconds)
 
- 
+
 if __name__ == "__main__":
     # execute only if run as a script
     print('nothing executed on calling VBZ')
